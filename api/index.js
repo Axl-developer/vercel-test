@@ -1,14 +1,8 @@
-const express = require('express');
-
-const app = express()
+import app from '../src'
 const PORT = 8000
 
 app.get('/', (req, res) => {
   res.send('Hello World')
-})
-
-app.get('/api/mi-endpoint', (req, res) => {
-  res.send('About route 🎉 ')
 })
 
 app.listen(PORT, () => {
