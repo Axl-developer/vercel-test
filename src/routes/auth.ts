@@ -1,7 +1,15 @@
 import { Request, Response } from "express";
-import { app } from ".."
-
-app.get('/auth/login', (req: Request, res: Response) => {
-    res.send('Habla especial')
-})
+import { Router } from "express"
   
+
+export const authRouter = () => {
+    
+    const router = Router()
+ 
+    router.get('/login', (req: Request, res: Response) => {
+        res.send('Habla especial')
+    })
+
+  
+    return router
+}

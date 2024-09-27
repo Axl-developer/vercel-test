@@ -1,17 +1,13 @@
-import { Request, Response } from "express";
+import { authRouter } from "./routes/auth";
 const express = require('express');
 
 export const app = express()
 const PORT = 8000
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World')
-})
-
-app.get('/api/mi-endpoint', (req: Request, res: Response) => {
-  res.send('About route 🎉 ')
-})
+app.use('/auth',authRouter())
 
 app.listen(PORT, () => {
-  console.log(`✅ Server is running on port ${PORT}`);
-})
+    console.log(`✅ Server is running on port ${PORT}`);
+  })
+
+export default app
